@@ -1,9 +1,10 @@
 public class Horspool {
 
-    public static int SIZE=500;
+    public static int SIZE=128;
     public static int table[]=new int[SIZE];
 
-    public void ShiftTable(String pattern) {
+    public void ShiftTable(String pattern)
+    {
         int i,j,m;
         char p[] = pattern.toCharArray();
         m=pattern.length();
