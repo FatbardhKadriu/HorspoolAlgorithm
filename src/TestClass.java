@@ -17,7 +17,7 @@ public class TestClass {
         Horspool h = new Horspool();
 
         h.ShiftTable(pattern);
-        position = h.HorspoolMatching(text,pattern);
+        position = h.HorspoolMatching(text, pattern);
 
         if(position == -1)
             System.out.println("Pattern not found");

@@ -1,23 +1,23 @@
 public class Horspool {
 
-    public static int SIZE=128;
-    public static int table[]=new int[SIZE];
+    public static int SIZE = 128;
+    public static int table[] = new int[SIZE];
 
     public void ShiftTable(String pattern)
     {
-        int i,j,m;
+        int i, j, m;
         char p[] = pattern.toCharArray();
-        m=pattern.length();
+        m = pattern.length();
 
-        for (i=0;i<SIZE;i++)
-            table[i]=m;
-        for (j=0;j<m-1;j++)
-            table[p[j]]=m-1-j;
+        for (i = 0; i < SIZE; i++)
+            table[i] = m;
+        for (j = 0;j < m-1; j++)
+            table[p[j]] = m - 1 - j;
     }
 
     public int HorspoolMatching(String text,String pattern)
     {
-        int i,k,m;
+        int i, k, m;
         char T[] = text.toCharArray();
         char P[] = pattern.toCharArray();
         m = pattern.length();
@@ -26,14 +26,12 @@ public class Horspool {
         while(i < text.length())
         {
             k=0;
-            while((k<m) && (P[m-1-k] == T[i-k]))
+            while((k < m) && (P[m-1-k] == T[i-k]))
                 k++;
-            if(k==m)
-            {
-                return i-m+1; // position of the pattern founded
-            }
+            if(k == m)
+                return i - m + 1; // position of the pattern founded
             else
-                i+=table[T[i]];
+                i += table[T[i]];
         }
         return -1;
     }
